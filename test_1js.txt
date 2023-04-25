@@ -1,0 +1,48 @@
+1.What is function? :
+=> function is a struncture to using commands for using multiple return the value.
+   they using of multiple purpose, function is using the value to call the function any time.
+
+2.What is a statement?
+=> Statement is a one line of command to using return the value.
+
+3.What are loop? Give the Example.
+=> Loop are using to Repet tast again and again,when the value tast are complete then the loops stops auto.
+Ex:=> For loop
+	  While loop
+
+4.What is variable?
+=> Variable is using to store the data.
+
+5.
+=> Using loop For declare and initialise.
+
+6.
+=> 1)Primitive Datatype :
+1.undifined
+2.boolean
+3.number
+4.null
+5.string
+6.symbol
+7.brigent
+								
+   2)Special Datatype :
+1.object
+
+7.
+=> 1.Null
+   2.not
+
+8.
+function(square){
+ console.log(10);
+ 
+ 
+}
+
+9.
+=>They Return the value to add particular tast.
+
+10.
+=>  the multiple property and value using by object, they using for data mutiple purpose.
+
