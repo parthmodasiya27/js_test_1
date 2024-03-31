@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 1</title>
+    <style>
+        table {
+            text-align: center;
+            border: 2px solid black;
+            border-collapse: collapse;
+        }
+
+        th {
+            background-color: #F49F1C;
+            color: white;
+        }
+
+        th,
+        td {
+            border: 2px solid black;
+            padding: 10px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #210070;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <input type="text" id="Search" name="Search">
+    <button onclick="Search()">Search</button>
+
+    <table>
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>Title</th>
+                <th>Price</th>
+                <th>Category Name</th>
+            </tr>
+        </thead>
+        <tbody id="display">
+
+        </tbody>
+    </table>
+
+    <script>
+
+        let Arr = [];
+
+        const fetchData = (url, dis) => {
+
+            fetch(url).then(y => y.json()).then(y => {
+                console.log(y);
+                Arr = y.data;
+                dis(Arr);
+            });
+        }
+
+        const dis = (data) => {
+            let p = data.map((value) => {
+                return `<tr><td>${value._id}</td>
+                    <td>${value.title}</td>
+                    <td>${value.price}</td>
+                    <td>${value.category.name}</td></tr>`
+            });
+            document.getElementById('display').innerHTML = p.join(' ')
+        }
+
+        function Search() {
+            let p = document.getElementById('Search').value.toLowerCase();
+
+            let productDetails = Arr.filter(function (value) {
+                return value.title.toLowerCase().includes(p);
+            })
+            dis(productDetails);
+        }
+
+        fetchData('https://api.storerestapi.com/products', dis)
+
+    </script>
+</body>
+
+</html>
